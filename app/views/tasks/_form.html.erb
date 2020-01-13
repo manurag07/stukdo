@@ -1,0 +1,9 @@
+
+<%= simple_form_for(@task) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <%=f.input:content, required: true, label: false, autofocus: true, placeholder:"Content"%>
+
+  <%= f.button :submit, class: "btn btn-lg btn-primary btn-block" %>
+<% end %>
